@@ -19,6 +19,11 @@ class PostgresDB:
     async def connect(self):
         """Create connection pool."""
         try:
+            print(settings.postgres_host,
+                  settings.postgres_port,
+                  settings.postgres_user,
+                  settings.postgres_password,
+                  settings.postgres_db)
             self.pool = await asyncpg.create_pool(
                 host=settings.postgres_host,
                 port=settings.postgres_port,
@@ -105,12 +110,12 @@ class PostgresDB:
             return await conn.fetch(query, *args)
 
     async def log_audit(
-        self,
-        entity_type: str,
-        entity_id: str,
-        action: str,
-        user_id: Optional[str] = None,
-        changes: Optional[Dict[str, Any]] = None
+            self,
+            entity_type: str,
+            entity_id: str,
+            action: str,
+            user_id: Optional[str] = None,
+            changes: Optional[Dict[str, Any]] = None
     ):
         """Log an audit entry."""
         async with self.pool.acquire() as conn:

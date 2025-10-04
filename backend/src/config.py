@@ -13,7 +13,7 @@ class Settings(BaseSettings):
         extra="ignore",  # Allow extra fields in .env
     )
 
-    app_name: str = "GraphAura"
+    app_name: str = "BrainClone"
     app_version: str = "0.1.0"
     debug: bool = Field(default=False, description="Debug mode")
     environment: str = Field(default="development", description="Environment (development, staging, production)")
@@ -30,19 +30,19 @@ class Settings(BaseSettings):
     access_token_expire_minutes: int = Field(default=30, description="Access token expiration in minutes")
 
     postgres_user: str = Field(default="postgres", description="PostgreSQL user")
-    postgres_password: str = Field(default="postgres", description="PostgreSQL password")
+    postgres_password: str = Field(default="\HWqeE1u2/iVg2.gRo2z", description="PostgreSQL password")
     postgres_host: str = Field(default="localhost", description="PostgreSQL host")
     postgres_port: int = Field(default=5432, description="PostgreSQL port")
-    postgres_db: str = Field(default="graphaura", description="PostgreSQL database name")
+    postgres_db: str = Field(default="brainclone", description="PostgreSQL database name")
 
     @computed_field
     @property
     def postgres_url(self) -> str:
         return f"postgresql+asyncpg://{self.postgres_user}:{self.postgres_password}@{self.postgres_host}:{self.postgres_port}/{self.postgres_db}"
 
-    neo4j_uri: str = Field(default="bolt://localhost:7687", description="Neo4j URI")
+    neo4j_uri: str = Field(default="neo4j+s://896d4b81.databases.neo4j.io", description="Neo4j URI")
     neo4j_user: str = Field(default="neo4j", description="Neo4j user")
-    neo4j_password: str = Field(default="password", description="Neo4j password")
+    neo4j_password: str = Field(default="_GSrxhZwzVYI7nOfirY9Ve7TpbeeLTFsGxpX-sdeSTM", description="Neo4j password")
     neo4j_database: str = Field(default="neo4j", description="Neo4j database name")
 
     r2r_base_url: str = Field(default="http://localhost:7272", description="R2R API base URL")
