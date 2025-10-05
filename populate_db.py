@@ -12,9 +12,9 @@ from datetime import datetime
 import uuid
 
 # Configuration - Update these with your Neo4j credentials
-NEO4J_URI = "neo4j+s://896d4b81.databases.neo4j.io"
+NEO4J_URI = "neo4j+s://5df056dc.databases.neo4j.io"
 NEO4J_USER = "neo4j"
-NEO4J_PASSWORD = "_GSrxhZwzVYI7nOfirY9Ve7TpbeeLTFsGxpX-sdeSTM"
+NEO4J_PASSWORD = "Q_yYWRfoFx2IBXhz51c3z4IXnJyaiHhnOdje71loHNc"
 NEO4J_DATABASE = "neo4j"
 
 
