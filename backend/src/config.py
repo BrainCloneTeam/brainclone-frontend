@@ -40,9 +40,9 @@ class Settings(BaseSettings):
     def postgres_url(self) -> str:
         return f"postgresql+asyncpg://{self.postgres_user}:{self.postgres_password}@{self.postgres_host}:{self.postgres_port}/{self.postgres_db}"
 
-    neo4j_uri: str = Field(default="neo4j+s://896d4b81.databases.neo4j.io", description="Neo4j URI")
+    neo4j_uri: str = Field(default="neo4j+s://5df056dc.databases.neo4j.io", description="Neo4j URI")
     neo4j_user: str = Field(default="neo4j", description="Neo4j user")
-    neo4j_password: str = Field(default="_GSrxhZwzVYI7nOfirY9Ve7TpbeeLTFsGxpX-sdeSTM", description="Neo4j password")
+    neo4j_password: str = Field(default="Q_yYWRfoFx2IBXhz51c3z4IXnJyaiHhnOdje71loHNc", description="Neo4j password")
     neo4j_database: str = Field(default="neo4j", description="Neo4j database name")
 
     r2r_base_url: str = Field(default="http://localhost:7272", description="R2R API base URL")
